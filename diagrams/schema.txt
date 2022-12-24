@@ -1,0 +1,73 @@
+//// -- Level 1
+//// -- Schemas, Tables and References
+
+Table ecommerce.order_items {
+  id int8 [ref: < ecommerce.order_item_refunds.order_item_id, pk]
+  order_id int8
+  customer_id int8 [not null]
+  product_id int8
+  created_at timestamptz
+  pre_tax_price float4
+  price float4
+  quantity int4
+  fulfillment_status ecommerce.fulfillment_status
+  location_id int4
+}
+
+Table ecommerce.products {
+  id int8 [not null, pk]
+  title varchar
+  product_type varchar
+  status varchar
+}
+
+Table ecommerce.order_item_refunds {
+  id int8 [pk]
+  created_at timestamptz
+  quantity int4
+  subtotal float4
+  order_item_id int8
+}
+
+Table ecommerce.customers {
+  id int8 [not null, pk]
+  created_at timestamptz
+  first_name varchar
+  last_name varchar
+  email varchar
+}
+
+Table public.locations {
+  id int4 [pk]
+  city varchar
+  state varchar
+}
+
+Ref: ecommerce.order_items.customer_id > ecommerce.customers.id
+Ref: ecommerce.order_items.product_id > ecommerce.products.id
+Ref: ecommerce.order_items.location_id > public.locations.id
+
+Table support.tickets {
+  id int8 [pk]
+  order_id int8
+  order_item_id int8
+  created_at timestamptz
+  subject varchar
+  description varchar
+  submitter_id int4
+}
+
+Ref: ecommerce.order_items.id < support.tickets.order_item_id
+Ref: ecommerce.order_items.order_id < support.tickets.order_id
+
+//----------------------------------------------//
+
+//// -- Level 2
+//// -- Enum, Indexes
+
+// Enum for 'order_items' table below
+Enum ecommerce.fulfillment_status {
+  fulfilled
+  restocked
+  partial
+}
