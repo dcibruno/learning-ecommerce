@@ -28,7 +28,7 @@ for row in range(0, 50+1):
 location = {
     'id': ids,
     'city': cities,
-    'state': states,
+    'state': states
 }
 
 df = pd.DataFrame(location, columns = ['id', 'city', 'state'])
