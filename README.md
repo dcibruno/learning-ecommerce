@@ -4,10 +4,6 @@
 
 Let's build out pseudo-E-commerce datasets to ease the learning in Data & Analytics projects through practice.
 
-## Requirements
-
-(W.I.P.)
-
 ## Database Schema
 
 ![schema](./diagrams/schema.png)
