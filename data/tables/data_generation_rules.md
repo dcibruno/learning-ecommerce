@@ -13,6 +13,9 @@ Below is some guidance on what we need to do.
 
 ### ecommerce.products
 
+1. Propositalmente, Treats (Dog) e Treat para gato (sem o 's'), para tratamento.
+2. Tamanho e preço juntos em details para a pessoa poder tratar.
+
 ### ecommerce.customers
 
 ### ecommerce.order_item_refunds
