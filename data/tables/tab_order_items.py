@@ -77,17 +77,6 @@ for row in range(10000):
 
     # order_id
 
-    # if len(order_id) == 0:
-    #     order_id.append(ind)
-    # elif product_id[-2] == product_id[-1]:
-    #     ind = ind + 1
-    #     order_id.append(ind)
-    # else:
-    #     ind = ind + random.randint(0, 1)
-    #     order_id.append(ind)
-
-    # order_id
-
     if len(order_id) == 0:
         order_id.append(ind)
     else:
@@ -139,8 +128,3 @@ customer = {
 df = pd.DataFrame(customer, columns = ['id', 'order_id', 'customer_id', 'product_id', 'created_at', 'pre_tax_price', 'price', 'quantity', 'fulfillment_status', 'location_id'])
 path = '../csvs/order_items.csv'
 df.to_csv(path_or_buf=path, encoding='utf-8', index=False)
-
-# print(id)
-# print(product_id)
-# print(order_id)
-# print(key_check)
