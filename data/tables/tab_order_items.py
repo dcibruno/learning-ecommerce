@@ -50,7 +50,7 @@ with open("../csvs/locations.csv") as locations_csv:
 #### Populating fields ####
 
 ind = 0
-for row in range(1000000):
+for row in range(1000):
     
     id.append(row)
 
@@ -75,18 +75,20 @@ for row in range(1000000):
         order_id.append(ind)
 
     customer_random_index = random.randint(0,len(csv_customer_ids)-1)
+    location_random_index = random.randint(0,len(csv_locations_ids)-1)
     if (len(order_id) == 1 and ind == 0):
         customer_id.append(csv_customer_ids[customer_random_index])
         created_at.append((fake.date_time_between_dates(csv_customer_creation_dates[customer_random_index], 'now')))
+        location_id.append(csv_locations_ids[location_random_index])
     elif order_id[-2] == order_id[-1]:
         customer_id.append(customer_id[-1])
         created_at.append(created_at[-1])
+        location_id.append(location_id[-1])
     else:
         customer_id.append(csv_customer_ids[customer_random_index])
         created_at.append((fake.date_time_between_dates(csv_customer_creation_dates[customer_random_index], 'now')))
-
-    location_random_index = random.randint(0,len(csv_locations_ids)-1)
-    location_id.append(csv_locations_ids[location_random_index])
+        location_id.append(csv_locations_ids[location_random_index])
+    
     pre_tax_price.append(round((price[row] - csv_locations_taxes[location_random_index] * price[row]), 2))
 
 customer = {
@@ -105,14 +107,3 @@ customer = {
 df = pd.DataFrame(customer, columns = ['id', 'order_id', 'customer_id', 'product_id', 'created_at', 'pre_tax_price', 'price', 'quantity', 'fulfillment_status', 'location_id'])
 path = '../csvs/order_items.csv'
 df.to_csv(path_or_buf=path, encoding='utf-8', index=False)
-
-# print(id)
-# print(order_id)
-# print(customer_id)
-# print(product_id)
-# print(created_at)
-# print(pre_tax_price)
-# print(price)
-# print(quantity)
-# print(fulfillment_status)
-# print(location_id)

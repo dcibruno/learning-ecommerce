@@ -17,8 +17,10 @@ Table ecommerce.order_items {
 Table ecommerce.products {
   id int8 [not null, pk]
   title varchar
-  product_type varchar
-  status varchar
+  category varchar
+  subcategory varchar
+  size varchar
+  price float4
 }
 
 Table ecommerce.order_item_refunds {
@@ -41,6 +43,7 @@ Table public.locations {
   id int4 [pk]
   city varchar
   state varchar
+  city_tax float4
 }
 
 Ref: ecommerce.order_items.customer_id > ecommerce.customers.id
@@ -69,5 +72,4 @@ Ref: ecommerce.order_items.order_id < support.tickets.order_id
 Enum ecommerce.fulfillment_status {
   fulfilled
   restocked
-  partial
 }
