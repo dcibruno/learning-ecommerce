@@ -18,7 +18,7 @@ quantity = []
 fulfillment_status = []
 location_id = []
 
-#### Reading CSVs ####
+# Open, read, and create lists using data from CSVs
 
 csv_product_ids = []
 csv_product_prices = []
@@ -47,23 +47,33 @@ with open("../csvs/locations.csv") as locations_csv:
         csv_locations_ids.append(int(row[0]))
         csv_locations_taxes.append(float(row[3]))
 
-#### Populating fields ####
+# Generate order_items data points
 
 ind = 0
-for row in range(1000):
+for row in range(10000):
+
+    # id (order_item_id)
     
     id.append(row)
+
+    # fulfillment_status
 
     if (ind % 2 == 0 or ind % 3 == 0 or ind % 5 == 0):
         fulfillment_status.append('fulfilled')
     else:
         fulfillment_status.append('restocked')
+
+    # product_id and price
     
     product_random_index = random.randint(0,len(csv_product_ids)-1)
     product_id.append(csv_product_ids[product_random_index])
     price.append(csv_product_prices[product_random_index])
 
+    # quantity
+
     quantity.append(random.randint(1, 4))
+
+    # order_id
 
     if len(order_id) == 0:
         order_id.append(ind)
@@ -73,6 +83,8 @@ for row in range(1000):
     else:
         ind = ind + random.randint(0, 1)
         order_id.append(ind)
+    
+    # customer_id, created_at, and location_id
 
     customer_random_index = random.randint(0,len(csv_customer_ids)-1)
     location_random_index = random.randint(0,len(csv_locations_ids)-1)
@@ -88,6 +100,8 @@ for row in range(1000):
         customer_id.append(csv_customer_ids[customer_random_index])
         created_at.append((fake.date_time_between_dates(csv_customer_creation_dates[customer_random_index], 'now')))
         location_id.append(csv_locations_ids[location_random_index])
+    
+    # pre_tax_price
     
     pre_tax_price.append(round((price[row] - csv_locations_taxes[location_random_index] * price[row]), 2))
 
