@@ -7,6 +7,8 @@ from dateutil.parser import parse
 
 fake = Faker('pt_BR')
 
+key_check = []
+
 id = []
 order_id = []
 customer_id = []
@@ -77,12 +79,13 @@ for row in range(10000):
 
     if len(order_id) == 0:
         order_id.append(ind)
-    elif product_id[-2] == product_id[-1]:
-        ind = ind + 1
-        order_id.append(ind)
     else:
-        ind = ind + random.randint(0, 1)
-        order_id.append(ind)
+        if (str(ind) + str(product_id[-1])) in key_check:
+            ind = ind + 1
+            order_id.append(ind)
+        else:
+            ind = ind + random.randint(0, 1)
+            order_id.append(ind)
     
     # customer_id, created_at, and location_id
 
@@ -104,6 +107,10 @@ for row in range(10000):
     # pre_tax_price
     
     pre_tax_price.append(round((price[row] - csv_locations_taxes[location_random_index] * price[row]), 2))
+
+    # Key Check!
+
+    key_check.append(str(ind) + str(product_id[-1]))
 
 customer = {
     'id': id,
