@@ -1,52 +1,52 @@
-id,city,state
-0,Tucano,Bahia
-1,Pato Branco,Paraná
-2,Pedro II,Piauí
-3,Tucano,Bahia
-4,Marau,Rio Grande do Sul
-5,Artur Nogueira,São Paulo
-6,Imbituba,Santa Catarina
-7,Caiarí,Rondônia
-8,Imbituba,Santa Catarina
-9,Itabirito,Minas Gerais
-10,Rio Real,Bahia
-11,Pedro II,Piauí
-12,Esmeraldas,Minas Gerais
-13,Centro,Pará
-14,Barras,Piauí
-15,Loanda,Paraná
-16,Esmeraldas,Minas Gerais
-17,Carlos Barbosa,Rio Grande do Sul
-18,Esmeraldas,Minas Gerais
-19,Canavieiras,Bahia
-20,Miracema,Rio de Janeiro
-21,Not Found,Not Found
-22,Viradouro,São Paulo
-23,Pedro II,Piauí
-24,Santo Amaro,Pernambuco
-25,Not Found,Not Found
-26,Rio Real,Bahia
-27,Itabirito,Minas Gerais
-28,Pato Branco,Paraná
-29,Siqueira Campos,Sergipe
-30,Itabirito,Minas Gerais
-31,Loanda,Paraná
-32,Centro,Pernambuco
-33,Guaraciaba do Norte,Ceará
-34,Castelo,São Paulo
-35,Barras,Piauí
-36,Centro,Pará
-37,Caiarí,Rondônia
-38,Caldas Novas,Goiás
-39,Nova Xavantina,Mato Grosso
-40,Nova Xavantina,Mato Grosso
-41,Santo Amaro,Pernambuco
-42,Pedro II,Piauí
-43,Santo Amaro,Pernambuco
-44,Palmeira,Paraná
-45,Santa Gertrudes,São Paulo
-46,Santa Gertrudes,São Paulo
-47,Tucano,Bahia
-48,Viradouro,São Paulo
-49,Guaraciaba do Norte,Ceará
-50,Barra dos Coqueiros,Sergipe
+id,city,state,city_tax
+0,Soledade,Rio Grande do Sul,0.1233
+1,Caiarí,Rondônia,0.0911
+2,Guapimirim,Rio de Janeiro,0.099
+3,Tucano,Bahia,0.1404
+4,Sarandi,Paraná,0.058
+5,Guapimirim,Rio de Janeiro,0.0891
+6,Palmeira,Paraná,0.1357
+7,Artur Nogueira,São Paulo,0.0587
+8,Esmeraldas,Minas Gerais,0.0504
+9,Miracema,Rio de Janeiro,0.1012
+10,Not Found,Not Found,0.0531
+11,Tucano,Bahia,0.1159
+12,Barras,Piauí,0.1349
+13,Nova Xavantina,Mato Grosso,0.1113
+14,Itaperuna,Rio de Janeiro,0.0719
+15,Not Found,Not Found,0.1476
+16,Buri,São Paulo,0.0805
+17,Marau,Rio Grande do Sul,0.053
+18,Santo Amaro,Pernambuco,0.1059
+19,Catende,Pernambuco,0.1118
+20,Marau,Rio Grande do Sul,0.093
+21,Nova Xavantina,Mato Grosso,0.0556
+22,Soure,Pará,0.0542
+23,Soledade,Rio Grande do Sul,0.0881
+24,Not Found,Not Found,0.108
+25,Caiarí,Rondônia,0.1304
+26,Centro,Pernambuco,0.0517
+27,Soure,Pará,0.0615
+28,Centro,Pernambuco,0.0762
+29,Centro,Pernambuco,0.0684
+30,Iturama,Minas Gerais,0.1267
+31,Ademar de Carvalho,Sergipe,0.1406
+32,Artur Nogueira,São Paulo,0.1424
+33,Castelo,São Paulo,0.096
+34,Nova Xavantina,Mato Grosso,0.071
+35,Pedro II,Piauí,0.1034
+36,Nova Xavantina,Mato Grosso,0.1023
+37,Viradouro,São Paulo,0.1125
+38,Carlos Barbosa,Rio Grande do Sul,0.0674
+39,Centro,Pernambuco,0.0684
+40,Siqueira Campos,Sergipe,0.1208
+41,Tucano,Bahia,0.0638
+42,Iturama,Minas Gerais,0.1272
+43,Barra dos Coqueiros,Sergipe,0.1067
+44,Soure,Pará,0.1141
+45,Pato Branco,Paraná,0.0521
+46,Resplendor,Minas Gerais,0.057
+47,Rio Real,Bahia,0.0602
+48,Santa Gertrudes,São Paulo,0.0623
+49,Viradouro,São Paulo,0.0678
+50,Centro,Pernambuco,0.1406
